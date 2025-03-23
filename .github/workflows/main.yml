@@ -8,7 +8,6 @@ jobs:
     name: run pull
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
     - name: install ssh keys
       run:
         mkdir /home/runner/.ssh
