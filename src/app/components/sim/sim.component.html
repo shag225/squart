@@ -1,4 +1,14 @@
 <div class="container">
-    <p>sim works2!</p>
-    {{test}}
+    <button mat-button (click)="createSession('start')">
+        Session Start
+    </button>
+    <button mat-button (click)="createSession('stop')">
+        Session Stop
+    </button>
+    <div class="table-div mt-5">
+        <ag-grid-angular class="ag-grid"
+        [rowData]="rowData"
+        [columnDefs]="colDefs" />
+    </div>
+    <app-sim-bar-chart [sessions]="rowData"></app-sim-bar-chart>
 </div>
