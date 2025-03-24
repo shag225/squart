@@ -28,17 +28,9 @@ export class SIMComponent {
   constructor(public simService: SIMService) {}
 
   ngOnInit() {
-    this.simService.getSessionList('sim_session_data').pipe(
-      map((s) => {
-        s.map((session) => {
-          const newDate = new Date(Number(session.sessionId) * 1000); 
-          session.date = moment(newDate).format("MM/DD/YYYY");
-          session.time = moment(newDate).format("hh:mm:ss A");
-       })
-       return s;
-      })
-    ).subscribe((data) => {
+    this.simService.getSessionList('sim_session_data').subscribe((data) => {
       this.rowData = data;
+      console.log(this.rowData)
     });
   }
 
