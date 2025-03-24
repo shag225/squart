@@ -9,7 +9,7 @@ import { SIMService } from './sim.service';
 })
 export class SIMComponent {
   constructor(public simService: SIMService) {
-    this.simService.getSessionList().subscribe((data) => {
+    this.simService.getSessionList('sim_session_data').subscribe((data) => {
       console.log(data);
     });
   }

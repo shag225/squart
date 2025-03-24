@@ -10,8 +10,8 @@ import { environment } from '../../environments/environment';
 export class SIMService {
   private http: HttpClient = inject(HttpClient);
 
-  getSessionList(): Observable<Session[]> {
-    const url: string = `${environment.apiUrl}/users/scanTable/sim_session_data`;
+  getSessionList(tableName: string): Observable<Session[]> {
+    const url: string = `${environment.apiUrl}/users/scanTable/${tableName}`;
     return this.http.get<Session[]>(url);
   }
 }
