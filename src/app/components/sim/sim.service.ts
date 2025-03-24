@@ -17,7 +17,9 @@ export class SIMService {
 
   createSession(action: string): Observable<any> {
     const url: string = `${environment.apiUrl}/users/create`;
-    let body = { datetime: Date.now(), action: action };
+    let newDate = Date.now()/1000
+    let body = { datetime: newDate.toFixed(0), action: action };
+    console.log(body);
     return this.http.post<Session>(url, body);
   }
 
