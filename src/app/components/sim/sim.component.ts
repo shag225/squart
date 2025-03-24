@@ -8,8 +8,10 @@ import { SIMService } from './sim.service';
   styleUrl: './sim.component.scss'
 })
 export class SIMComponent {
+  test = 'Not done'
   constructor(public simService: SIMService) {
     this.simService.getSessionList('sim_session_data').subscribe((data) => {
+      this.test = "Done!";
       console.log(data);
     });
   }
