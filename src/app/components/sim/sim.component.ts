@@ -12,6 +12,5 @@ export class SIMComponent {
     this.simService.getSessionList().subscribe((data) => {
       console.log(data);
     });
-
   }
 }
