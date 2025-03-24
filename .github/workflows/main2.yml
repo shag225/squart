@@ -37,3 +37,5 @@ jobs:
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: rsync over SSH
         run: rsync -r /home/runner/work/squart/squart/dist/squart/browser/ steveschmidt@shag225.ddns.net:squart_dist/
+      - name: move files to nginx dir
+        run: mv /home/steveschmidt/squart_dist/* /var/www/shag225.ddns.net
