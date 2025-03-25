@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { AgCharts } from 'ag-charts-angular';
 import { AgChartOptions } from 'ag-charts-community';
 import { Session } from '../session.model';
@@ -11,10 +11,12 @@ import moment from 'moment';
   styleUrl: './sim-bar-chart.component.scss'
 })
 export class SimBarChartComponent {
-  @Input() sessions: Session[] | undefined
+  monthCount = [];
+  @Input() sessions: Session[] | undefined;
   public chartOptions: AgChartOptions;
+
   constructor() {
-    console.log(this.sessions);
+    
     this.sessions?.map((session) => {
       session.month = moment(session.date).format("MMM");
     })
@@ -31,5 +33,10 @@ export class SimBarChartComponent {
       // Series: Defines which chart type and data to use
       series: [{ type: 'bar', xKey: 'month', yKey: 'iceCreamSales' }]
     };
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(this.sessions);
+    this.sessions?.map((session) => {})
   }
 }

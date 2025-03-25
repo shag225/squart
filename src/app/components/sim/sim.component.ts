@@ -3,15 +3,14 @@ import { SIMService } from './sim.service';
 import { AgGridAngular } from 'ag-grid-angular'; // Angular Data Grid Component
 import type { ColDef } from 'ag-grid-community'; // Column Definition Type Interface
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
-import { map } from 'rxjs';
-import moment from 'moment';
 import { SimBarChartComponent } from './sim-bar-chart/sim-bar-chart.component';
+import { MatButtonModule } from '@angular/material/button';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 @Component({
   selector: 'app-sim',
-  imports: [ AgGridAngular, SimBarChartComponent ],
+  imports: [ AgGridAngular, SimBarChartComponent, MatButtonModule ],
   templateUrl: './sim.component.html',
   styleUrl: './sim.component.scss'
 })

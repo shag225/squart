@@ -5,10 +5,16 @@
     <button mat-button (click)="createSession('stop')">
         Session Stop
     </button>
-    <div class="table-div mt-5">
-        <ag-grid-angular class="ag-grid"
-        [rowData]="rowData"
-        [columnDefs]="colDefs" />
+    <div class="row mt-5">
+        <div class="col-6">
+            <ag-grid-angular class="ag-grid"
+            [rowData]="rowData"
+            [columnDefs]="colDefs" />
+        </div>
+        <div class="col-6">
+            <app-sim-bar-chart [sessions]="rowData"></app-sim-bar-chart>
+        </div>
+        
     </div>
-    <app-sim-bar-chart [sessions]="rowData"></app-sim-bar-chart>
+    
 </div>
