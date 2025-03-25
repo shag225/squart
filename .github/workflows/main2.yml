@@ -36,4 +36,4 @@ jobs:
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
       - name: rsync over SSH
-        run: rsync -r /home/runner/work/squart/squart/dist/squart/browser/ steveschmidt@shag225.ddns.net:squart_dist/
+        run: rsync -r /home/runner/work/squart/squart/dist/squart/browser/ steveschmidt@shag225.ddns.net:squart_dist/shag225.ddns.net/
